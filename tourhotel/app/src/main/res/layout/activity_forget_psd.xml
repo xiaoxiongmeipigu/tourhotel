@@ -1,0 +1,266 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/lay_header"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_height_50dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="账号"
+            android:textSize="@dimen/text_big_x"
+            android:textStyle="bold"
+            android:textColor="@color/shop_black"
+            android:layout_marginLeft="@dimen/margin_2"
+            />
+
+        <EditText
+            android:id="@+id/account_et"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="@dimen/margin_2"
+            android:hint="请输入账号"
+            android:textColorHint="@color/light_black"
+            android:textSize="@dimen/text_big"
+            android:background="@null"
+            android:maxLines="1"
+            />
+
+        <ImageView
+            android:id="@+id/clear_account"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@mipmap/clear_gray"
+            android:paddingLeft="@dimen/margin_2"
+            android:paddingRight="@dimen/margin_2"
+            android:visibility="gone"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider_line"
+        android:layout_marginLeft="@dimen/margin_2"
+        android:layout_marginRight="@dimen/margin_2"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_height_50dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="手机号"
+            android:textSize="@dimen/text_big_x"
+            android:textStyle="bold"
+            android:textColor="@color/shop_black"
+            android:layout_marginLeft="@dimen/margin_2"
+            />
+
+        <EditText
+            android:id="@+id/name_et"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="@dimen/margin_2"
+            android:hint="仅支持中国大陆手机号"
+            android:textColorHint="@color/light_black"
+            android:textSize="@dimen/text_big"
+            android:background="@null"
+            android:inputType="phone"
+            android:maxLength="11"
+            />
+
+        <ImageView
+            android:id="@+id/clear_name"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@mipmap/clear_gray"
+            android:paddingLeft="@dimen/margin_2"
+            android:paddingRight="@dimen/margin_2"
+            android:visibility="gone"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider_line"
+        android:layout_marginLeft="@dimen/margin_2"
+        android:layout_marginRight="@dimen/margin_2"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_height_50dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        >
+
+        <EditText
+            android:id="@+id/image_et"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="@dimen/margin_2"
+            android:hint="输入右图验证码"
+            android:textColorHint="@color/light_black"
+            android:textSize="@dimen/text_big"
+            android:background="@null"
+            android:maxLength="6"
+            android:maxLines="1"
+            android:ellipsize="end"
+            />
+
+
+        <ImageView
+            android:id="@+id/clear_img"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@mipmap/clear_gray"
+            android:paddingLeft="@dimen/margin_10dp"
+            android:paddingRight="@dimen/margin_10dp"
+            android:visibility="gone"
+            />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/code_img"
+            android:layout_width="105dp"
+            android:layout_height="45dp"
+            android:scaleType="fitXY"
+            fresco:fadeDuration="2000"
+            fresco:placeholderImage="@mipmap/img_default"
+            fresco:placeholderImageScaleType="fitCenter"
+            fresco:progressBarAutoRotateInterval="2000"
+            fresco:progressBarImage="@drawable/progress"
+            fresco:progressBarImageScaleType="centerInside"
+            fresco:actualImageScaleType="centerCrop"
+            android:layout_gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/request_img"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:text="换一张"
+            android:textSize="@dimen/text_big"
+            android:textColor="@color/shop_yellow"
+            android:layout_marginRight="@dimen/margin_2"
+            android:gravity="center"
+            android:background="@drawable/rect_solid_white_stroke_yellow"
+            android:minWidth="70dp"
+            android:paddingLeft="@dimen/margin_1"
+            android:paddingRight="@dimen/margin_1"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider_line"
+        android:layout_marginLeft="@dimen/margin_2"
+        android:layout_marginRight="@dimen/margin_2"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_height_50dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="验证码"
+            android:textSize="@dimen/text_big_x"
+            android:textStyle="bold"
+            android:textColor="@color/shop_black"
+            android:layout_marginLeft="@dimen/margin_2"
+            />
+
+        <EditText
+            android:id="@+id/code_et"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="@dimen/margin_2"
+            android:hint="请输入验证码"
+            android:textColorHint="@color/light_black"
+            android:textSize="@dimen/text_big"
+            android:background="@null"
+            android:maxLength="6"
+            />
+
+        <ImageView
+            android:id="@+id/clear_code"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@mipmap/clear_gray"
+            android:paddingLeft="@dimen/margin_2"
+            android:paddingRight="@dimen/margin_2"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/request_code"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:text="获取验证码"
+            android:textSize="@dimen/text_big"
+            android:textColor="@color/shop_yellow"
+            android:layout_marginRight="@dimen/margin_2"
+            android:gravity="center"
+            android:background="@drawable/rect_solid_white_stroke_yellow"
+            android:minWidth="110dp"
+            android:paddingLeft="@dimen/margin_1"
+            android:paddingRight="@dimen/margin_1"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider_line"
+        />
+
+    <TextView
+        android:id="@+id/next"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_height_50dp"
+        android:text="下一步"
+        android:textColor="@color/shop_white"
+        android:textSize="@dimen/text_big_x"
+        android:gravity="center"
+        android:background="@drawable/selector_pressed_color_blue_round_5"
+        android:layout_marginLeft="@dimen/margin_2"
+        android:layout_marginRight="@dimen/margin_2"
+        android:layout_marginTop="@dimen/margin_2"
+        />
+
+</LinearLayout>

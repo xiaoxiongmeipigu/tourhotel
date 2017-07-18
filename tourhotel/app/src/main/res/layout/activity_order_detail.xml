@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zjhj.tourhotel.activity.order.OrderDetailActivity"
+    android:background="@color/background_gray"
+    >
+
+    <include
+        layout="@layout/lay_header_blue"
+        />
+
+    <com.zjhj.tourhotel.widget.MyScrollview
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lay_header"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/shop_white"
+                android:gravity="center_vertical"
+                android:padding="@dimen/margin_2"
+                >
+
+                <TextView
+                    android:id="@+id/order_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="@dimen/text_big"
+                    android:textColor="@color/shop_black"
+                    />
+
+                <TextView
+                    android:id="@+id/date_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="@dimen/text_big"
+                    android:textColor="@color/shop_black"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/background_gray"
+                android:layout_marginLeft="@dimen/margin_2"
+                android:layout_marginRight="@dimen/margin_2"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/shop_white"
+                android:gravity="center_vertical"
+                android:padding="@dimen/margin_2"
+                >
+
+                <TextView
+                    android:id="@+id/name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/shop_black"
+                    android:textSize="@dimen/text_big"
+                    />
+
+                <TextView
+                    android:id="@+id/phone_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/shop_black"
+                    android:textSize="@dimen/text_big"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/use_date_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="用餐时间："
+                    android:textColor="@color/shop_black"
+                    android:textSize="@dimen/text_big"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/background_gray"
+                android:layout_marginLeft="@dimen/margin_2"
+                android:layout_marginRight="@dimen/margin_2"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/shop_white"
+                android:gravity="center_vertical"
+                android:padding="@dimen/margin_2"
+                >
+
+                <TextView
+                    android:id="@+id/taste_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="口味："
+                    android:textColor="@color/shop_black"
+                    android:textSize="@dimen/text_big"
+                    />
+
+                <TextView
+                    android:id="@+id/remark_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="备注："
+                    android:textColor="@color/shop_black"
+                    android:textSize="@dimen/text_big"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    />
+
+            </LinearLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_1"
+                ></android.support.v7.widget.RecyclerView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/shop_white"
+                android:gravity="center_vertical"
+                android:padding="@dimen/margin_2"
+                android:layout_marginTop="@dimen/margin_1"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="原价："
+                        android:textColor="@color/shop_black"
+                        android:textSize="@dimen/text_big"
+                        />
+
+                    <TextView
+                        android:id="@+id/old_price_tv"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/shop_black"
+                        android:textSize="@dimen/text_big"
+                        android:gravity="right"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="@dimen/margin_10dp"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="折扣"
+                        android:textColor="@color/shop_black"
+                        android:textSize="@dimen/text_big"
+                        />
+
+                    <TextView
+                        android:id="@+id/discount_rate_tv"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="10"
+                        android:textColor="@color/shop_black"
+                        android:textSize="@dimen/text_big"
+                        android:gravity="right"
+                        />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/background_gray"
+                android:layout_marginLeft="@dimen/margin_2"
+                android:layout_marginRight="@dimen/margin_2"
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin_2"
+                android:background="@color/shop_white"
+                android:layout_marginBottom="@dimen/margin_3"
+                >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_alignParentRight="true"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="合计："
+                        android:textSize="@dimen/text_big_xx"
+                        android:textColor="@color/shop_black"
+                        />
+
+                    <TextView
+                        android:id="@+id/all_price_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="¥ 0"
+                        android:textSize="@dimen/text_big_xx"
+                        android:textColor="@color/shop_red"
+                        />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </com.zjhj.tourhotel.widget.MyScrollview>
+
+</RelativeLayout>

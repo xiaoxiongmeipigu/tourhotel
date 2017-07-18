@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:background="@android:color/white"
+android:padding="@dimen/margin_2"
+android:orientation="vertical">
+
+<TextView
+    android:id="@+id/camera"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="拍照"
+    android:gravity="center"
+    android:textSize="@dimen/text_big"
+    android:textColor="@color/shop_orange"
+    android:padding="@dimen/margin_1"
+    android:layout_margin="@dimen/margin_1"
+    android:background="@drawable/rect_solid_white_stroke_orange_round_8"/>
+<TextView
+    android:id="@+id/photo"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="从相册中选取"
+    android:textColor="@color/shop_orange"
+    android:gravity="center"
+    android:textSize="@dimen/text_big"
+    android:padding="@dimen/margin_1"
+    android:layout_margin="@dimen/margin_1"
+    android:background="@drawable/rect_solid_white_stroke_orange_round_8"/>
+<TextView
+    android:id="@+id/cancel"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="取消"
+    android:gravity="center"
+    android:textSize="@dimen/text_big"
+    android:textColor="@color/light_gray"
+    android:padding="@dimen/margin_1"
+    android:layout_margin="@dimen/margin_1"
+    android:background="@drawable/rect_solid_white_stroke_orange_round_8"/>
+
+
+</LinearLayout>

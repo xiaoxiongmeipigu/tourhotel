@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zjhj.tourhotel.activity.LoginActivity"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/login_logo"
+            android:scaleType="fitXY"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/login_name"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_height_50dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/rect_solid_color_white_strike_light_black_round_5"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/account_logo"
+                android:layout_marginLeft="@dimen/margin_2"
+                />
+
+            <EditText
+                android:id="@+id/account_et"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="@dimen/margin_2"
+                android:background="@null"
+                android:hint="账号"
+                android:textColorHint="@color/light_black"
+                android:textSize="@dimen/text_big"
+                android:textColor="@color/shop_black"
+                android:maxLines="1"
+                />
+
+            <ImageView
+                android:id="@+id/clear_account"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@mipmap/clear_gray"
+                android:paddingLeft="@dimen/margin_2"
+                android:paddingRight="@dimen/margin_2"
+                android:visibility="gone"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_height_50dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="@dimen/margin_2"
+            android:background="@drawable/rect_solid_color_white_strike_light_black_round_5"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/psd_logo"
+                android:layout_marginLeft="@dimen/margin_2"
+                />
+
+            <EditText
+                android:id="@+id/psd_et"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="@dimen/margin_2"
+                android:background="@null"
+                android:hint="密码"
+                android:textColorHint="@color/light_black"
+                android:textSize="@dimen/text_big"
+                android:textColor="@color/shop_black"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                />
+
+            <ImageView
+                android:id="@+id/clear_psd"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@mipmap/clear_gray"
+                android:paddingLeft="@dimen/margin_2"
+                android:paddingRight="@dimen/margin_2"
+                android:visibility="gone"
+                />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/login"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/text_height_50dp"
+            android:text="登录"
+            android:textColor="@color/shop_white"
+            android:textSize="@dimen/text_big_x"
+            android:gravity="center"
+            android:background="@drawable/selector_pressed_color_blue_round_5"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="@dimen/margin_2"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:gravity="center_vertical"
+            android:layout_marginTop="@dimen/margin_1"
+            >
+
+            <TextView
+                android:id="@+id/register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="申请入驻"
+                android:textSize="@dimen/text_big"
+                android:textColor="@color/shop_black"
+                android:paddingTop="@dimen/margin_1"
+                android:paddingBottom="@dimen/margin_1"
+                android:paddingRight="@dimen/margin_1"
+                />
+
+            <TextView
+                android:id="@+id/forget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="忘记密码？"
+                android:textSize="@dimen/text_big"
+                android:textColor="@color/shop_black"
+                android:paddingTop="@dimen/margin_1"
+                android:paddingBottom="@dimen/margin_1"
+                android:paddingLeft="@dimen/margin_1"
+                android:layout_alignParentRight="true"
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+</ScrollView>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.zjhj.tourhotel.activity.order.OrderListActivity"
+    android:background="@color/background_gray"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/lay_header_blue"
+        />
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/text_height_50dp"
+        app:tabIndicatorColor="@color/shop_blue"
+        app:tabSelectedTextColor="@color/shop_blue"
+        app:tabTextColor="@color/light_black"
+        app:tabIndicatorHeight="1dp"
+        app:tabTextAppearance="@style/TabLayoutTextAppearance_size_big"
+        android:background="@color/shop_white"
+        android:layout_below="@+id/lay_header"
+        >
+    </android.support.design.widget.TabLayout>
+    <View
+        android:id="@+id/divider_view"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divider_line"
+        android:layout_below="@+id/tablayout"
+        />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/divider_view"
+        >
+    </android.support.v4.view.ViewPager>
+
+</LinearLayout>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    tools:context="com.zjhj.tourhotel.activity.photo.PhotoActivity">
+
+    <include
+        layout="@layout/lay_header_blue"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/lay_header"
+        android:layout_marginLeft="@dimen/margin_2"
+        android:layout_marginRight="@dimen/margin_2"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            >
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/out_pic_iv"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                fresco:fadeDuration="2000"
+                fresco:placeholderImage="@mipmap/out_pic"
+                fresco:placeholderImageScaleType="fitXY"
+                android:layout_centerHorizontal="true"
+                fresco:actualImageScaleType="fitXY"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="外部图片"
+                android:textSize="@dimen/text_big_xx"
+                android:textColor="@color/shop_white"
+                android:textStyle="bold"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            >
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/inside_pic_iv"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                fresco:fadeDuration="2000"
+                fresco:placeholderImage="@mipmap/inside_pic"
+                fresco:placeholderImageScaleType="fitXY"
+                android:layout_centerHorizontal="true"
+                fresco:actualImageScaleType="fitXY"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="内部图片"
+                android:textSize="@dimen/text_big_xx"
+                android:textColor="@color/shop_white"
+                android:textStyle="bold"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            >
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/other_pic_iv"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                fresco:fadeDuration="2000"
+                fresco:placeholderImage="@mipmap/other_pic"
+                fresco:placeholderImageScaleType="fitXY"
+                android:layout_centerHorizontal="true"
+                fresco:actualImageScaleType="fitXY"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="其它图片"
+                android:textSize="@dimen/text_big_xx"
+                android:textColor="@color/shop_white"
+                android:textStyle="bold"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

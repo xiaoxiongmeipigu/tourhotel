@@ -1,0 +1,1049 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    tools:context="com.zjhj.tourhotel.activity.shop.ShopEditActivity">
+
+    <include
+        layout="@layout/lay_header_blue"
+        />
+
+    <com.zjhj.tourhotel.widget.MyScrollview
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lay_header"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/text_height_50dp"
+                android:paddingLeft="@dimen/margin_2"
+                android:paddingRight="@dimen/margin_2"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="*"
+                    android:textColor="@color/shop_red"
+                    android:textSize="@dimen/text_big_xx"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="酒店名称"
+                    android:textSize="@dimen/text_big"
+                    android:textStyle="bold"
+                    android:textColor="@color/shop_black"
+                    android:layout_marginRight="@dimen/margin_10dp"
+                    />
+
+                <EditText
+                    android:id="@+id/name_tv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text=""
+                    android:textSize="@dimen/text_big"
+                    android:textColor="@color/shop_black"
+                    android:hint="请输入酒店名称"
+                    android:textColorHint="@color/light_black"
+                    android:gravity="center_vertical"
+                    android:background="@null"
+                    android:maxLines="1"
+                    />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/background_gray"
+                android:layout_marginLeft="@dimen/margin_2"
+                android:layout_marginRight="@dimen/margin_2"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/margin_2"
+                android:layout_marginBottom="@dimen/margin_2"
+                android:paddingLeft="@dimen/margin_2"
+                android:paddingRight="@dimen/margin_2"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="*"
+                    android:textColor="@color/shop_red"
+                    android:textSize="@dimen/text_big_xx"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="上传酒店封面图"
+                    android:textSize="@dimen/text_big"
+                    android:textStyle="bold"
+                    android:textColor="@color/shop_black"
+                    />
+
+                <com.facebook.drawee.view.SimpleDraweeView
+                    android:id="@+id/cover_pic"
+                    android:layout_width="165dp"
+                    android:layout_height="100dp"
+                    android:scaleType="fitXY"
+                    fresco:fadeDuration="2000"
+                    fresco:placeholderImage="@mipmap/img_default"
+                    fresco:placeholderImageScaleType="fitCenter"
+                    fresco:progressBarAutoRotateInterval="2000"
+                    fresco:progressBarImage="@drawable/progress"
+                    fresco:progressBarImageScaleType="centerInside"
+                    fresco:actualImageScaleType="centerCrop"
+                    fresco:roundedCornerRadius="10dp"
+                    fresco:roundTopLeft="true"
+                    fresco:roundTopRight="true"
+                    fresco:roundBottomLeft="true"
+                    fresco:roundBottomRight="true"
+                    android:layout_marginTop="@dimen/margin_2"
+                    />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/background_gray"
+                android:layout_marginLeft="@dimen/margin_2"
+                android:layout_marginRight="@dimen/margin_2"
+                />
+
+            <LinearLayout
+                android:id="@+id/restaurant_cat_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/text_height_50dp"
+                android:paddingLeft="@dimen/margin_2"
+                android:paddingRight="@dimen/margin_2"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="*"
+                    android:textColor="@color/shop_red"
+                    android:textSize="@dimen/text_big_xx"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="餐厅类型"
+                    android:textSize="@dimen/text_big"
+                    android:textStyle="bold"
+                    android:textColor="@color/shop_black"
+                    android:layout_marginRight="@dimen/margin_10dp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="right|center_vertical"
+                    >
+
+                    <TextView
+                        android:id="@+id/restaurant_cat_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="请选择餐厅类型"
+                        android:textSize="@dimen/text_big"
+                        android:textColor="@color/shop_black"
+                        android:gravity="center_vertical"
+                        android:background="@null"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/right"
+                        android:layout_marginLeft="@dimen/margin_1"
+                        />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/background_gray"
+                android:layout_marginLeft="@dimen/margin_2"
+                android:layout_marginRight="@dimen/margin_2"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/text_height_50dp"
+                android:paddingLeft="@dimen/margin_2"
+                android:paddingRight="@dimen/margin_2"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="*"
+                    android:textColor="@color/shop_red"
+                    android:textSize="@dimen/text_big_xx"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="酒店折扣（折）"
+                    android:textSize="@dimen/text_big"
+                    android:textStyle="bold"
+                    android:textColor="@color/shop_black"
+                    android:layout_marginRight="@dimen/margin_10dp"
+                    />
+
+                <EditText
+                    android:id="@+id/discount_rate_tv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text=""
+                    android:textSize="@dimen/text_big"
+                    android:textColor="@color/shop_black"
+                    android:hint="请输入折扣"
+                    android:textColorHint="@color/light_black"
+                    android:gravity="center_vertical"
+                    android:background="@null"
+                    android:maxLines="1"
+                    android:inputType="numberDecimal"
+                    />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/background_gray"
+                android:layout_marginLeft="@dimen/margin_2"
+                android:layout_marginRight="@dimen/margin_2"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="@dimen/margin_2"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="酒店特点"
+                    android:textSize="@dimen/text_big"
+                    android:textStyle="bold"
+                    android:textColor="@color/shop_black"
+                    android:layout_marginRight="@dimen/margin_10dp"
+                    />
+
+                <EditText
+                    android:id="@+id/feature_tv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="@dimen/text_big"
+                    android:textColor="@color/shop_black"
+                    android:hint="请输入酒店特点"
+                    android:textColorHint="@color/light_black"
+                    android:gravity="center_vertical"
+                    android:background="@null"
+                    />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/background_gray"
+                android:layout_marginLeft="@dimen/margin_2"
+                android:layout_marginRight="@dimen/margin_2"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/text_height_50dp"
+                android:paddingLeft="@dimen/margin_2"
+                android:paddingRight="@dimen/margin_2"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="*"
+                    android:textColor="@color/shop_red"
+                    android:textSize="@dimen/text_big_xx"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="人均基础消费（元/人）"
+                    android:textSize="@dimen/text_big"
+                    android:textStyle="bold"
+                    android:textColor="@color/shop_black"
+                    android:layout_marginRight="@dimen/margin_10dp"
+                    />
+
+                <EditText
+                    android:id="@+id/customer_consumption_tv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text=""
+                    android:textSize="@dimen/text_big"
+                    android:textColor="@color/shop_black"
+                    android:hint="请输入人均消费"
+                    android:textColorHint="@color/light_black"
+                    android:gravity="center_vertical"
+                    android:background="@null"
+                    android:maxLines="1"
+                    android:inputType="numberDecimal"
+                    />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/background_gray"
+                android:layout_marginLeft="@dimen/margin_2"
+                android:layout_marginRight="@dimen/margin_2"
+                />
+
+            <LinearLayout
+                android:id="@+id/city_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/text_height_50dp"
+                android:paddingLeft="@dimen/margin_2"
+                android:paddingRight="@dimen/margin_2"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="*"
+                    android:textColor="@color/shop_red"
+                    android:textSize="@dimen/text_big_xx"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="地区"
+                    android:textSize="@dimen/text_big"
+                    android:textStyle="bold"
+                    android:textColor="@color/shop_black"
+                    android:layout_marginRight="@dimen/margin_10dp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="right|center_vertical"
+                    >
+
+                    <TextView
+                        android:id="@+id/city_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="请选择省市区"
+                        android:textSize="@dimen/text_big"
+                        android:textColor="@color/shop_black"
+                        android:gravity="center_vertical"
+                        android:background="@null"
+                        android:maxLines="1"
+                        android:ellipsize="end"
+                        />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/right"
+                        android:layout_marginLeft="@dimen/margin_1"
+                        />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/background_gray"
+                android:layout_marginLeft="@dimen/margin_2"
+                android:layout_marginRight="@dimen/margin_2"
+                />
+
+            <LinearLayout
+                android:id="@+id/addr_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="@dimen/margin_2"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="*"
+                    android:textColor="@color/shop_red"
+                    android:textSize="@dimen/text_big_xx"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="详细地址"
+                    android:textSize="@dimen/text_big"
+                    android:textStyle="bold"
+                    android:textColor="@color/shop_black"
+                    android:layout_marginRight="@dimen/margin_10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/addr_tv"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="@dimen/text_big"
+                    android:textColor="@color/shop_black"
+                    android:gravity="center_vertical"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/margin_1"
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/addr_logo"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="定位"
+                        android:textSize="@dimen/text_big"
+                        android:textColor="@color/light_black"
+                        android:layout_marginLeft="@dimen/margin_1"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/background_gray"
+                android:layout_marginLeft="@dimen/margin_2"
+                android:layout_marginRight="@dimen/margin_2"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/margin_2"
+                android:paddingRight="@dimen/margin_2"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:text="相关景点"
+                    android:textSize="@dimen/text_big"
+                    android:textStyle="bold"
+                    android:textColor="@color/shop_black"
+                    android:gravity="center_vertical"
+                    android:layout_marginRight="@dimen/margin_10dp"
+                    />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/background_gray"
+                android:layout_marginLeft="@dimen/margin_2"
+                android:layout_marginRight="@dimen/margin_2"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="@dimen/margin_2"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="酒店简介"
+                    android:textSize="@dimen/text_big"
+                    android:textStyle="bold"
+                    android:textColor="@color/shop_black"
+                    android:gravity="center_vertical"
+                    android:layout_marginRight="@dimen/margin_10dp"
+                    />
+
+                <EditText
+                    android:id="@+id/desc_et"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="@dimen/text_big"
+                    android:textColor="@color/shop_black"
+                    android:hint="请输入简介"
+                    android:textColorHint="@color/light_black"
+                    android:gravity="center_vertical"
+                    android:background="@null"
+                    />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/background_gray"
+                android:layout_marginLeft="@dimen/margin_2"
+                android:layout_marginRight="@dimen/margin_2"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="@dimen/margin_2"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="容纳量（人数）"
+                    android:textSize="@dimen/text_big"
+                    android:textStyle="bold"
+                    android:textColor="@color/shop_black"
+                    android:gravity="center_vertical"
+                    android:layout_marginRight="@dimen/margin_10dp"
+                    />
+
+                <EditText
+                    android:id="@+id/population_max_et"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text=""
+                    android:textSize="@dimen/text_big"
+                    android:textColor="@color/shop_black"
+                    android:hint="请输入容纳量"
+                    android:textColorHint="@color/light_black"
+                    android:gravity="center_vertical"
+                    android:background="@null"
+                    android:maxLines="1"
+                    android:inputType="number"
+                    />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="@color/background_gray"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:minHeight="@dimen/text_height_50dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/margin_2"
+                android:paddingRight="@dimen/margin_2"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:text="酒店政策"
+                    android:textSize="@dimen/text_big"
+                    android:textStyle="bold"
+                    android:textColor="@color/shop_black"
+                    android:layout_marginRight="@dimen/margin_10dp"
+                    android:gravity="center_vertical"
+                    />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/background_gray"
+                android:layout_marginLeft="@dimen/margin_2"
+                android:layout_marginRight="@dimen/margin_2"
+                />
+
+            <LinearLayout
+                android:id="@+id/start_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:minHeight="@dimen/text_height_50dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/margin_2"
+                android:paddingRight="@dimen/margin_2"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="接受预订开始时间"
+                    android:textSize="@dimen/text_big"
+                    android:textStyle="bold"
+                    android:textColor="@color/shop_black"
+                    android:layout_marginRight="@dimen/margin_10dp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="right|center_vertical"
+                    >
+
+                    <TextView
+                        android:id="@+id/accept_booking_time_begin_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="@dimen/text_big"
+                        android:textColor="@color/shop_black"
+                        android:gravity="center_vertical"
+                        />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/right"
+                        android:layout_marginLeft="@dimen/margin_1"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/background_gray"
+                android:layout_marginLeft="@dimen/margin_2"
+                android:layout_marginRight="@dimen/margin_2"
+                />
+
+            <LinearLayout
+                android:id="@+id/end_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:minHeight="@dimen/text_height_50dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/margin_2"
+                android:paddingRight="@dimen/margin_2"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="接受预订结束时间"
+                    android:textSize="@dimen/text_big"
+                    android:textStyle="bold"
+                    android:textColor="@color/shop_black"
+                    android:layout_marginRight="@dimen/margin_10dp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="right|center_vertical"
+                    >
+
+                    <TextView
+                        android:id="@+id/accept_booking_time_end_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textSize="@dimen/text_big"
+                        android:textColor="@color/shop_black"
+                        android:gravity="center_vertical"
+                        />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/right"
+                        android:layout_marginLeft="@dimen/margin_1"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/background_gray"
+                android:layout_marginLeft="@dimen/margin_2"
+                android:layout_marginRight="@dimen/margin_2"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:minHeight="@dimen/text_height_50dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/margin_2"
+                android:paddingRight="@dimen/margin_2"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="可预订时间"
+                    android:textSize="@dimen/text_big"
+                    android:textStyle="bold"
+                    android:textColor="@color/shop_black"
+                    android:layout_marginRight="@dimen/margin_10dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="支持提前"
+                    android:textSize="@dimen/text_big"
+                    android:textColor="@color/shop_black"
+                    android:gravity="center_vertical"
+                    />
+
+                <EditText
+                    android:id="@+id/booking_time_et"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:text=""
+                    android:textSize="@dimen/text_big"
+                    android:textColor="@color/shop_black"
+                    android:gravity="center"
+                    android:background="@drawable/rect_solid_color_white_strike_light_black_round_0"
+                    android:inputType="number"
+                    android:layout_marginLeft="@dimen/margin_1"
+                    android:layout_marginRight="@dimen/margin_1"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="小时预订"
+                    android:textSize="@dimen/text_big"
+                    android:textColor="@color/shop_black"
+                    android:gravity="center_vertical"
+                    />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/background_gray"
+                android:layout_marginLeft="@dimen/margin_2"
+                android:layout_marginRight="@dimen/margin_2"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/margin_2"
+                android:paddingRight="@dimen/margin_2"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:text="支付方式"
+                    android:textSize="@dimen/text_big"
+                    android:textStyle="bold"
+                    android:textColor="@color/shop_black"
+                    android:gravity="center_vertical"
+                    android:layout_marginRight="@dimen/margin_10dp"
+                    />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/pay_recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/background_gray"
+                android:layout_marginLeft="@dimen/margin_2"
+                android:layout_marginRight="@dimen/margin_2"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/margin_2"
+                android:paddingRight="@dimen/margin_2"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:text="用餐时间"
+                    android:textSize="@dimen/text_big"
+                    android:textStyle="bold"
+                    android:textColor="@color/shop_black"
+                    android:gravity="center_vertical"
+                    android:layout_marginRight="@dimen/margin_10dp"
+                    />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/dining_recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="@color/background_gray"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:minHeight="@dimen/text_height_50dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/margin_2"
+                android:paddingRight="@dimen/margin_2"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:text="联系方式"
+                    android:textSize="@dimen/text_big"
+                    android:textStyle="bold"
+                    android:textColor="@color/shop_black"
+                    android:layout_marginRight="@dimen/margin_10dp"
+                    android:gravity="center_vertical"
+                    />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/background_gray"
+                android:layout_marginLeft="@dimen/margin_2"
+                android:layout_marginRight="@dimen/margin_2"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:minHeight="@dimen/text_height_50dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/margin_2"
+                android:paddingRight="@dimen/margin_2"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="座机号码"
+                    android:textSize="@dimen/text_big"
+                    android:textStyle="bold"
+                    android:textColor="@color/shop_black"
+                    android:layout_marginRight="@dimen/margin_10dp"
+                    />
+
+                <EditText
+                    android:id="@+id/tel_et"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text=""
+                    android:textSize="@dimen/text_big"
+                    android:textColor="@color/shop_black"
+                    android:gravity="center_vertical"
+                    android:background="@null"
+                    android:maxLines="1"
+                    android:hint="请输入座机号码"
+                    android:textColorHint="@color/light_black"
+                    />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/background_gray"
+                android:layout_marginLeft="@dimen/margin_2"
+                android:layout_marginRight="@dimen/margin_2"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:minHeight="@dimen/text_height_50dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/margin_2"
+                android:paddingRight="@dimen/margin_2"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="*"
+                    android:textColor="@color/shop_red"
+                    android:textSize="@dimen/text_big_xx"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="手机号码"
+                    android:textSize="@dimen/text_big"
+                    android:textStyle="bold"
+                    android:textColor="@color/shop_black"
+                    android:layout_marginRight="@dimen/margin_10dp"
+                    />
+
+                <EditText
+                    android:id="@+id/mobile_et"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text=""
+                    android:textSize="@dimen/text_big"
+                    android:textColor="@color/shop_black"
+                    android:gravity="center_vertical"
+                    android:background="@null"
+                    android:maxLines="1"
+                    android:hint="请输入手机号码"
+                    android:textColorHint="@color/light_black"
+                    />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/background_gray"
+                android:layout_marginLeft="@dimen/margin_2"
+                android:layout_marginRight="@dimen/margin_2"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/margin_2"
+                android:paddingRight="@dimen/margin_2"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:text="便利设施"
+                    android:textSize="@dimen/text_big"
+                    android:textStyle="bold"
+                    android:textColor="@color/shop_black"
+                    android:gravity="center_vertical"
+                    android:layout_marginRight="@dimen/margin_10dp"
+                    />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/service_recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </com.zjhj.tourhotel.widget.MyScrollview>
+
+</RelativeLayout>

@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    tools:context="com.zjhj.tourhotel.activity.RegisterActivity">
+
+    <include
+        layout="@layout/lay_header_blue"
+        />
+
+    <com.zjhj.tourhotel.widget.MyScrollview
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/lay_header"
+        android:id="@+id/scrollView"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/margin_2"
+            android:layout_marginRight="@dimen/margin_2"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_height_50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:text="酒店名称"
+                    android:textSize="@dimen/text_big_x"
+                    android:textStyle="bold"
+                    android:textColor="@color/shop_black"
+                    />
+
+                <EditText
+                    android:id="@+id/shop_name_et"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/margin_1"
+                    android:hint="请输入酒店名称"
+                    android:textColorHint="@color/light_black"
+                    android:textSize="@dimen/text_big"
+                    android:background="@null"
+                    android:maxLines="1"
+                    />
+
+                <ImageView
+                    android:id="@+id/clear_shop_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/clear_gray"
+                    android:paddingLeft="@dimen/margin_2"
+                    android:paddingRight="@dimen/margin_2"
+                    android:visibility="gone"
+                    />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/divider_line"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_height_50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:text="联系人"
+                    android:textSize="@dimen/text_big_x"
+                    android:textStyle="bold"
+                    android:textColor="@color/shop_black"
+                    />
+
+                <EditText
+                    android:id="@+id/name_et"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/margin_1"
+                    android:hint="请输入联系人姓名"
+                    android:textColorHint="@color/light_black"
+                    android:textSize="@dimen/text_big"
+                    android:background="@null"
+                    android:maxLines="1"
+                    />
+
+                <ImageView
+                    android:id="@+id/clear_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/clear_gray"
+                    android:paddingLeft="@dimen/margin_2"
+                    android:paddingRight="@dimen/margin_2"
+                    android:visibility="gone"
+                    />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/divider_line"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_height_50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:text="手机号"
+                    android:textSize="@dimen/text_big_x"
+                    android:textStyle="bold"
+                    android:textColor="@color/shop_black"
+                    />
+
+                <EditText
+                    android:id="@+id/phone_et"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/margin_1"
+                    android:hint="请输入手机号"
+                    android:textColorHint="@color/light_black"
+                    android:textSize="@dimen/text_big"
+                    android:background="@null"
+                    android:inputType="phone"
+                    android:maxLength="11"
+                    />
+
+                <ImageView
+                    android:id="@+id/clear_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/clear_gray"
+                    android:paddingLeft="@dimen/margin_2"
+                    android:paddingRight="@dimen/margin_2"
+                    android:visibility="gone"
+                    />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/divider_line"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_height_50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:text="验证码"
+                    android:textSize="@dimen/text_big_x"
+                    android:textStyle="bold"
+                    android:textColor="@color/shop_black"
+                    />
+
+                <EditText
+                    android:id="@+id/code_et"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/margin_1"
+                    android:hint="请输入验证码"
+                    android:textColorHint="@color/light_black"
+                    android:textSize="@dimen/text_big"
+                    android:background="@null"
+                    android:maxLength="6"
+                    />
+
+                <ImageView
+                    android:id="@+id/clear_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/clear_gray"
+                    android:paddingLeft="@dimen/margin_2"
+                    android:paddingRight="@dimen/margin_2"
+                    android:visibility="gone"
+                    />
+
+                <TextView
+                    android:id="@+id/request_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:text="获取验证码"
+                    android:textSize="@dimen/text_big"
+                    android:textColor="@color/shop_yellow"
+                    android:gravity="center"
+                    android:background="@drawable/rect_solid_white_stroke_yellow"
+                    android:minWidth="100dp"
+                    android:paddingLeft="@dimen/margin_1"
+                    android:paddingRight="@dimen/margin_1"
+                    />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/divider_line"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_height_50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:text="推荐人"
+                    android:textSize="@dimen/text_big_x"
+                    android:textStyle="bold"
+                    android:textColor="@color/shop_black"
+                    />
+
+                <EditText
+                    android:id="@+id/recommend_et"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/margin_1"
+                    android:hint="请输入推广码"
+                    android:textColorHint="@color/light_black"
+                    android:textSize="@dimen/text_big"
+                    android:background="@null"
+                    android:maxLines="1"
+                    />
+
+                <ImageView
+                    android:id="@+id/clear_recommend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/clear_gray"
+                    android:paddingLeft="@dimen/margin_2"
+                    android:paddingRight="@dimen/margin_2"
+                    android:visibility="gone"
+                    />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/divider_line"
+                />
+
+            <LinearLayout
+                android:id="@+id/city_ll"
+                android:layout_width="match_parent"
+                android:minHeight="@dimen/text_height_50dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="选择城市"
+                    android:textSize="@dimen/text_big_x"
+                    android:textStyle="bold"
+                    android:textColor="@color/shop_black"
+                    />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical|right"
+                    android:layout_marginLeft="@dimen/margin_1"
+                    >
+
+                    <TextView
+                        android:id="@+id/city_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="点击选择城市"
+                        android:textSize="@dimen/text_big"
+                        android:textColor="@color/light_black"
+                        />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/right"
+                        android:layout_marginLeft="@dimen/margin_1"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/divider_line"
+                />
+
+            <LinearLayout
+                android:id="@+id/addr_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:minHeight="@dimen/text_height_50dp"
+                >
+
+                <TextView
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:text="地址"
+                    android:textSize="@dimen/text_big_x"
+                    android:textStyle="bold"
+                    android:textColor="@color/shop_black"
+                    android:gravity="center_vertical"
+                    />
+
+                <TextView
+                    android:id="@+id/addr_tv"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/margin_1"
+                    android:textSize="@dimen/text_big"
+                    android:paddingTop="@dimen/margin_1"
+                    android:paddingBottom="@dimen/margin_1"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/margin_1"
+                    >
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/addr_logo"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="定位"
+                        android:textSize="@dimen/text_big"
+                        android:textColor="@color/light_black"
+                        android:layout_marginLeft="@dimen/margin_1"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/divider_line"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="168dp"
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_big_x"
+                    android:textStyle="bold"
+                    android:textColor="@color/shop_black"
+                    android:text="上传营业执照"
+                    />
+
+
+                <RelativeLayout
+                    android:id="@+id/licence_rl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_2"
+                    >
+
+                    <LinearLayout
+                        android:id="@+id/licence_ll"
+                        android:layout_width="165dp"
+                        android:layout_height="100dp"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:background="@drawable/rect_solid_color_backgoundgary_round_5"
+                        >
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/camera"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="点击上传"
+                            android:textSize="@dimen/text_big"
+                            android:textColor="#aaaaaa"
+                            android:layout_marginTop="@dimen/margin_2"
+                            />
+
+                    </LinearLayout>
+
+                    <com.facebook.drawee.view.SimpleDraweeView
+                        android:id="@+id/licence_image"
+                        android:layout_width="165dp"
+                        android:layout_height="100dp"
+                        android:scaleType="fitXY"
+                        fresco:fadeDuration="2000"
+                        fresco:placeholderImage="@mipmap/img_default"
+                        fresco:placeholderImageScaleType="fitCenter"
+                        fresco:progressBarAutoRotateInterval="2000"
+                        fresco:progressBarImage="@drawable/progress"
+                        fresco:progressBarImageScaleType="centerInside"
+                        fresco:actualImageScaleType="centerCrop"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        />
+
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/divider_line"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="168dp"
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_big_x"
+                    android:textStyle="bold"
+                    android:textColor="@color/shop_black"
+                    android:text="上传食品经营许可证"
+                    />
+
+
+                <RelativeLayout
+                    android:id="@+id/food_rl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_2"
+                    >
+
+                    <LinearLayout
+                        android:id="@+id/food_ll"
+                        android:layout_width="165dp"
+                        android:layout_height="100dp"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:background="@drawable/rect_solid_color_backgoundgary_round_5"
+                        >
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/camera"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="点击上传"
+                            android:textSize="@dimen/text_big"
+                            android:textColor="#aaaaaa"
+                            android:layout_marginTop="@dimen/margin_2"
+                            />
+
+                    </LinearLayout>
+
+                    <com.facebook.drawee.view.SimpleDraweeView
+                        android:id="@+id/food_image"
+                        android:layout_width="165dp"
+                        android:layout_height="100dp"
+                        android:scaleType="fitXY"
+                        fresco:fadeDuration="2000"
+                        fresco:placeholderImage="@mipmap/img_default"
+                        fresco:placeholderImageScaleType="fitCenter"
+                        fresco:progressBarAutoRotateInterval="2000"
+                        fresco:progressBarImage="@drawable/progress"
+                        fresco:progressBarImageScaleType="centerInside"
+                        fresco:actualImageScaleType="centerCrop"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        />
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/divider_line"
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="168dp"
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_big_x"
+                    android:textStyle="bold"
+                    android:textColor="@color/shop_black"
+                    android:text="上传酒店封面图"
+                    />
+
+
+                <RelativeLayout
+                    android:id="@+id/shop_rl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_2"
+                    >
+
+                    <LinearLayout
+                        android:id="@+id/shop_ll"
+                        android:layout_width="165dp"
+                        android:layout_height="100dp"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:background="@drawable/rect_solid_color_backgoundgary_round_5"
+                        >
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/camera"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="点击上传"
+                            android:textSize="@dimen/text_big"
+                            android:textColor="#aaaaaa"
+                            android:layout_marginTop="@dimen/margin_2"
+                            />
+
+                    </LinearLayout>
+
+                    <com.facebook.drawee.view.SimpleDraweeView
+                        android:id="@+id/shop_image"
+                        android:layout_width="165dp"
+                        android:layout_height="100dp"
+                        android:scaleType="fitXY"
+                        fresco:fadeDuration="2000"
+                        fresco:placeholderImage="@mipmap/img_default"
+                        fresco:placeholderImageScaleType="fitCenter"
+                        fresco:progressBarAutoRotateInterval="2000"
+                        fresco:progressBarImage="@drawable/progress"
+                        fresco:progressBarImageScaleType="centerInside"
+                        fresco:actualImageScaleType="centerCrop"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        />
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/divider_line"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:paddingTop="@dimen/margin_1"
+                android:paddingBottom="@dimen/margin_1"
+                android:layout_marginTop="@dimen/margin_1"
+                android:layout_marginBottom="@dimen/margin_1"
+                >
+
+                <ImageView
+                    android:id="@+id/gree_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ungree_logo"
+                    android:paddingLeft="@dimen/margin_1"
+                    android:paddingRight="@dimen/margin_1"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="已阅读并同意"
+                    android:textSize="@dimen/text_normal"
+                    android:textColor="@color/light_black"
+                    />
+
+                <TextView
+                    android:id="@+id/protocol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="《游助网商户服务协议》"
+                    android:textColor="@color/shop_blue"
+                    android:textSize="@dimen/text_normal"
+                    android:paddingLeft="@dimen/margin_1"
+                    android:paddingRight="@dimen/margin_1"
+                    android:gravity="center_vertical"
+                    />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/submit"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_height_50dp"
+                android:text="提交"
+                android:textColor="@color/shop_white"
+                android:textSize="@dimen/text_big_x"
+                android:gravity="center"
+                android:background="@drawable/selector_pressed_color_blue_round_5"
+                android:layout_marginBottom="@dimen/margin_2"
+                />
+
+        </LinearLayout>
+    </com.zjhj.tourhotel.widget.MyScrollview>
+
+</RelativeLayout>
