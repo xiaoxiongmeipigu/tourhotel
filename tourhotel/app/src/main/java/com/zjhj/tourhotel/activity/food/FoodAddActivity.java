@@ -7,7 +7,9 @@ import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -132,6 +134,24 @@ public class FoodAddActivity extends BaseActivity {
             }
         });
 
+        searchEt.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_SEARCH) {//EditorInfo.IME_ACTION_SEARCH、EditorInfo.IME_ACTION_SEND等分别对应EditText的imeOptions属性
+                    //TODO回车键按下时要执行的操作
+                    String keyWord = searchEt.getText().toString().trim();
+                    if (TextUtils.isEmpty(keyWord)) {
+                        MainToast.showShortToast("请输入需要查询的菜品名称");
+                        return true;
+                    }else{
+                        searchStr = keyWord;
+                        refreshData();
+                    }
+                }
+                return true;
+            }
+        });
+
         searchEt.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -141,10 +161,10 @@ public class FoodAddActivity extends BaseActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 String newText = s.toString().trim();
+                searchStr = newText;
                 if (newText.length() > 0) {
                     clearIv.setVisibility(View.VISIBLE);
-                    searchStr = newText;
-                    refreshData();
+//                    refreshData();
                 }else
                     clearIv.setVisibility(View.INVISIBLE);
             }

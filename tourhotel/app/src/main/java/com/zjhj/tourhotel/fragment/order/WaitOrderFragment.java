@@ -91,7 +91,7 @@ public class WaitOrderFragment extends BaseFrag {
         recyclerView.setAdapter(mAdapter);
 
         cancelAlertDialog = new CancelAlertDialog(getActivity());
-        cancelAlertDialog.setLeftBtnText("取消").setRightBtnText("提交").setTitle("驳回").setHint("输入驳回理由");
+        cancelAlertDialog.setLeftBtnText("取消").setRightBtnText("提交").setTitle("拒绝").setHint("输入拒绝理由");
         cancelAlertDialog.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_ALT_FOCUSABLE_IM);
         cancelAlertDialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE |
                 WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);

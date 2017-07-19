@@ -112,7 +112,7 @@
                 android:id="@+id/reject"
                 android:layout_width="60dp"
                 android:layout_height="30dp"
-                android:text="驳回"
+                android:text="拒绝"
                 android:textColor="@drawable/selector_press_text_color_light_black"
                 android:textSize="@dimen/text_big"
                 android:textStyle="bold"

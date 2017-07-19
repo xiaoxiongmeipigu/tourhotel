@@ -48,4 +48,5 @@ public class BasicApi {
     public static String managetimedel = "/manage/time-del";
     public static String managegetmanage = "/manage/get-hotel";
     public static String managebanner= "/manage/banner";
+
 }
