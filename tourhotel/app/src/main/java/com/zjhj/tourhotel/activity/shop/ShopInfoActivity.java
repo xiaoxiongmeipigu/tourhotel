@@ -20,7 +20,6 @@ import com.facebook.imagepipeline.request.ImageRequest;
 import com.facebook.imagepipeline.request.ImageRequestBuilder;
 import com.zjhj.commom.api.ItemApi;
 import com.zjhj.commom.application.AppContext;
-import com.zjhj.commom.result.MapiFoodResult;
 import com.zjhj.commom.result.MapiResourceResult;
 import com.zjhj.commom.util.DPUtil;
 import com.zjhj.commom.util.RequestCallback;
@@ -83,11 +82,14 @@ public class ShopInfoActivity extends BaseActivity {
     TextView otherTv;
     @Bind(R.id.scrollView)
     MyScrollview scrollView;
+    @Bind(R.id.tv_right)
+    TextView tvRight;
 
     List<MapiResourceResult> spots;
     List<MapiResourceResult> payTypes;
     List<MapiResourceResult> dining_time;
     List<MapiResourceResult> others;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,6 +104,7 @@ public class ShopInfoActivity extends BaseActivity {
 
         back.setImageResource(R.mipmap.back_white);
         center.setText("酒店管理");
+        tvRight.setText("修改密码");
 
         spots = new ArrayList<>();
         payTypes = new ArrayList<>();
@@ -110,16 +113,16 @@ public class ShopInfoActivity extends BaseActivity {
 
     }
 
-    private void load(){
+    private void load() {
         showLoading();
         ItemApi.managehotelmanage(this, new RequestCallback<JSONObject>() {
             @Override
             public void success(JSONObject success) {
                 hideLoading();
-                if(null==success)
+                if (null == success)
                     return;
                 String nameStr = success.getJSONObject("data").getString("name");
-                nameTv.setText(TextUtils.isEmpty(nameStr)?"":nameStr);
+                nameTv.setText(TextUtils.isEmpty(nameStr) ? "" : nameStr);
                 String cover_pic = success.getJSONObject("data").getString("cover_pic");
 
                 //创建将要下载的图片的URI
@@ -135,58 +138,58 @@ public class ShopInfoActivity extends BaseActivity {
                 coverPic.setController(controller);
 
                 String restaurantCatStr = success.getJSONObject("data").getString("restaurant_cat");
-                restaurantCatTv.setText(TextUtils.isEmpty(restaurantCatStr)?"":restaurantCatStr);
+                restaurantCatTv.setText(TextUtils.isEmpty(restaurantCatStr) ? "" : restaurantCatStr);
 
                 String discount_rate = success.getJSONObject("data").getString("discount_rate");
-                discountRateTv.setText(TextUtils.isEmpty(discount_rate)?"":discount_rate);
+                discountRateTv.setText(TextUtils.isEmpty(discount_rate) ? "" : discount_rate);
 
                 String feature = success.getJSONObject("data").getString("feature");
-                featureTv.setText(TextUtils.isEmpty(feature)?"":feature);
+                featureTv.setText(TextUtils.isEmpty(feature) ? "" : feature);
 
                 String customer_consumption = success.getJSONObject("data").getString("customer_consumption");
-                customerConsumptionTv.setText(TextUtils.isEmpty(customer_consumption)?"":customer_consumption);
+                customerConsumptionTv.setText(TextUtils.isEmpty(customer_consumption) ? "" : customer_consumption);
 
                 String province_name = success.getJSONObject("data").getString("province_name");
                 String city_name = success.getJSONObject("data").getString("city_name");
                 String area_name = success.getJSONObject("data").getString("area_name");
-                cityTv.setText(province_name+" "+city_name+" "+area_name);
+                cityTv.setText(province_name + " " + city_name + " " + area_name);
 
                 String address = success.getJSONObject("data").getString("address");
-                addrTv.setText(TextUtils.isEmpty(address)?"":address);
+                addrTv.setText(TextUtils.isEmpty(address) ? "" : address);
 
-                spots = JSONArray.parseArray(success.getJSONObject("data").getJSONArray("spots").toJSONString(),MapiResourceResult.class);
-                if(null!=spots)
+                spots = JSONArray.parseArray(success.getJSONObject("data").getJSONArray("spots").toJSONString(), MapiResourceResult.class);
+                if (null != spots)
                     initSposts();
 
                 String desc = success.getJSONObject("data").getString("desc");
-                descTv.setText(TextUtils.isEmpty(desc)?"":desc);
+                descTv.setText(TextUtils.isEmpty(desc) ? "" : desc);
 
                 String population_max = success.getJSONObject("data").getString("population_max");
-                populationMaxTv.setText(TextUtils.isEmpty(population_max)?"":population_max);
+                populationMaxTv.setText(TextUtils.isEmpty(population_max) ? "" : population_max);
 
                 String begin = success.getJSONObject("data").getJSONObject("accept_booking_time").getString("begin");
                 String end = success.getJSONObject("data").getJSONObject("accept_booking_time").getString("end");
-                acceptBookingTimeTv.setText((TextUtils.isEmpty(begin)?"":begin+"-")+(TextUtils.isEmpty(end)?"":end));
+                acceptBookingTimeTv.setText((TextUtils.isEmpty(begin) ? "" : begin + "-") + (TextUtils.isEmpty(end) ? "" : end));
 
                 String booking_time = success.getJSONObject("data").getString("booking_time");
-                bookingTimeTv.setText("支付提前"+(TextUtils.isEmpty(booking_time)?"24":booking_time)+"小时预订");
+                bookingTimeTv.setText("支付提前" + (TextUtils.isEmpty(booking_time) ? "24" : booking_time) + "小时预订");
 
-                payTypes = JSONArray.parseArray(success.getJSONObject("data").getJSONArray("pay_type").toJSONString(),MapiResourceResult.class);
-                if(null!=payTypes)
+                payTypes = JSONArray.parseArray(success.getJSONObject("data").getJSONArray("pay_type").toJSONString(), MapiResourceResult.class);
+                if (null != payTypes)
                     initType();
 
-                dining_time = JSONArray.parseArray(success.getJSONObject("data").getJSONArray("dining_time").toJSONString(),MapiResourceResult.class);
-                if(null!=dining_time)
+                dining_time = JSONArray.parseArray(success.getJSONObject("data").getJSONArray("dining_time").toJSONString(), MapiResourceResult.class);
+                if (null != dining_time)
                     initDinner();
 
-                String tel =  success.getJSONObject("data").getString("tel");
-                telTv.setText(TextUtils.isEmpty(tel)?"":tel);
+                String tel = success.getJSONObject("data").getString("tel");
+                telTv.setText(TextUtils.isEmpty(tel) ? "" : tel);
 
-                String mobile =  success.getJSONObject("data").getString("mobile");
-                mobileTv.setText(TextUtils.isEmpty(mobile)?"":mobile);
+                String mobile = success.getJSONObject("data").getString("mobile");
+                mobileTv.setText(TextUtils.isEmpty(mobile) ? "" : mobile);
 
-                others = JSONArray.parseArray(success.getJSONObject("data").getJSONArray("other").toJSONString(),MapiResourceResult.class);
-                if(null!=others)
+                others = JSONArray.parseArray(success.getJSONObject("data").getJSONArray("other").toJSONString(), MapiResourceResult.class);
+                if (null != others)
                     initOther();
 
 
@@ -200,51 +203,51 @@ public class ShopInfoActivity extends BaseActivity {
         });
     }
 
-    private void initSposts(){
+    private void initSposts() {
         String str = "";
-        for(MapiResourceResult resourceResult: spots){
-            if(TextUtils.isEmpty(str))
+        for (MapiResourceResult resourceResult : spots) {
+            if (TextUtils.isEmpty(str))
                 str += resourceResult.getName();
             else
-                str += ", "+resourceResult.getName();
+                str += ", " + resourceResult.getName();
         }
         spotsTv.setText(str);
     }
 
-    private void initType(){
+    private void initType() {
         String str = "";
-        for(MapiResourceResult resourceResult: payTypes){
-            if(TextUtils.isEmpty(str))
+        for (MapiResourceResult resourceResult : payTypes) {
+            if (TextUtils.isEmpty(str))
                 str += resourceResult.getName();
             else
-                str += "  "+resourceResult.getName();
+                str += "  " + resourceResult.getName();
         }
         payTypeTv.setText(str);
     }
 
-    private void initOther(){
+    private void initOther() {
         String str = "";
-        for(MapiResourceResult resourceResult: others){
-            if(TextUtils.isEmpty(str))
+        for (MapiResourceResult resourceResult : others) {
+            if (TextUtils.isEmpty(str))
                 str += resourceResult.getName();
             else
-                str += "  "+resourceResult.getName();
+                str += "  " + resourceResult.getName();
         }
         otherTv.setText(str);
     }
 
-    private void initDinner(){
+    private void initDinner() {
         String str = "";
-        for(MapiResourceResult resourceResult: dining_time){
-            if(TextUtils.isEmpty(str))
+        for (MapiResourceResult resourceResult : dining_time) {
+            if (TextUtils.isEmpty(str))
                 str += resourceResult.getName();
             else
-                str += "  "+resourceResult.getName();
+                str += "  " + resourceResult.getName();
         }
         diningTimeTv.setText(str);
     }
 
-    @OnClick({R.id.back, R.id.modify, R.id.set_time})
+    @OnClick({R.id.back, R.id.modify, R.id.set_time,R.id.tv_right})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.back:
@@ -259,13 +262,16 @@ public class ShopInfoActivity extends BaseActivity {
             case R.id.set_time:
                 ControllerUtil.go2ShopTime();
                 break;
+            case R.id.tv_right:
+                ControllerUtil.go2ModifyPsd();
+                break;
         }
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(RESULT_OK==resultCode){
-            if(requestCode==RequestCode.edit_shop){
+        if (RESULT_OK == resultCode) {
+            if (requestCode == RequestCode.edit_shop) {
                 load();
             }
         }

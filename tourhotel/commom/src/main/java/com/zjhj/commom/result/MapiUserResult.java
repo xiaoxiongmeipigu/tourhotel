@@ -17,6 +17,60 @@ public class MapiUserResult extends MapiBaseResult {
     private String hygiene;
     private String cat;
     private String food;
+    private String is_contract_over;
+    private String contract_over_url;
+    private String merchant_name;
+    private String merchant_feature;
+    private String merchant_cover_pic;
+    private String share_page_url;
+
+    public String getMerchant_cover_pic() {
+        return merchant_cover_pic;
+    }
+
+    public void setMerchant_cover_pic(String merchant_cover_pic) {
+        this.merchant_cover_pic = merchant_cover_pic;
+    }
+
+    public String getMerchant_feature() {
+        return merchant_feature;
+    }
+
+    public void setMerchant_feature(String merchant_feature) {
+        this.merchant_feature = merchant_feature;
+    }
+
+    public String getMerchant_name() {
+        return merchant_name;
+    }
+
+    public void setMerchant_name(String merchant_name) {
+        this.merchant_name = merchant_name;
+    }
+
+    public String getShare_page_url() {
+        return share_page_url;
+    }
+
+    public void setShare_page_url(String share_page_url) {
+        this.share_page_url = share_page_url;
+    }
+
+    public String getContract_over_url() {
+        return contract_over_url;
+    }
+
+    public void setContract_over_url(String contract_over_url) {
+        this.contract_over_url = contract_over_url;
+    }
+
+    public String getIs_contract_over() {
+        return is_contract_over;
+    }
+
+    public void setIs_contract_over(String is_contract_over) {
+        this.is_contract_over = is_contract_over;
+    }
 
     public String getBusiness() {
         return business;

@@ -173,7 +173,7 @@
 
             <!-- QQ和QQ空间分享 QQ登录的回调必须要配置的 -->
             <intent-filter>
-                <data android:scheme="tencent1106212322" />
+                <data android:scheme="tencent1106211583" />
 
                 <action android:name="android.intent.action.VIEW" />
 
@@ -186,6 +186,7 @@
         <activity android:name="com.soundcloud.android.crop.CropImageActivity" />
         <activity
             android:name=".activity.MainActivity"
+            android:launchMode="singleTask"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -262,12 +263,15 @@
             android:name=".activity.shop.ShopEditActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity android:name=".activity.shop.SpotAddActivity"
+        <activity
+            android:name=".activity.shop.SpotAddActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.shop.ShopTimeActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activity.ModifyPsdActivity"
             android:screenOrientation="portrait"
             />
-        <activity android:name=".activity.shop.ShopTimeActivity"
-            android:screenOrientation="portrait"
-            ></activity>
     </application>
 
 </manifest>

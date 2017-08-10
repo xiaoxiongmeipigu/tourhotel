@@ -117,7 +117,7 @@ public class JGJDataSource {
     public static List<MapiResourceResult> getPayType() {
         List<MapiResourceResult> list = new ArrayList<>();
         list.add(new MapiResourceResult("1", "支付宝"));
-        list.add(new MapiResourceResult("2", "微信"));
+        list.add(new MapiResourceResult("2", "微信支付"));
         list.add(new MapiResourceResult("3", "现金"));
         list.add(new MapiResourceResult("4", "银联"));
         return list;

@@ -109,6 +109,12 @@ public class RegisterActivity extends BaseActivity {
     TextView cityTv;
     @Bind(R.id.city_ll)
     LinearLayout cityLl;
+    @Bind(R.id.gree_iv)
+    ImageView greeIv;
+    @Bind(R.id.business_number)
+    EditText businessNumber;
+    @Bind(R.id.clear_business)
+    ImageView clearBusiness;
 
     PoiItem poiItem;
 
@@ -117,8 +123,6 @@ public class RegisterActivity extends BaseActivity {
     ArrayList<MapiImageResult> foodImgs;
     ArrayList<MapiImageResult> shopImgs;
     String type = "0";
-    @Bind(R.id.gree_iv)
-    ImageView greeIv;
 
 
     /**
@@ -193,7 +197,7 @@ public class RegisterActivity extends BaseActivity {
                 if (charSequence.length() > 0) {
                     clearShopName.setVisibility(View.VISIBLE);
                 } else {
-                    clearShopName.setVisibility(View.INVISIBLE);
+                    clearShopName.setVisibility(View.GONE);
                 }
             }
 
@@ -214,7 +218,7 @@ public class RegisterActivity extends BaseActivity {
                 if (charSequence.length() > 0) {
                     clearName.setVisibility(View.VISIBLE);
                 } else {
-                    clearName.setVisibility(View.INVISIBLE);
+                    clearName.setVisibility(View.GONE);
                 }
             }
 
@@ -236,7 +240,7 @@ public class RegisterActivity extends BaseActivity {
                 if (charSequence.length() > 0) {
                     clearPhone.setVisibility(View.VISIBLE);
                 } else {
-                    clearPhone.setVisibility(View.INVISIBLE);
+                    clearPhone.setVisibility(View.GONE);
                 }
             }
 
@@ -280,7 +284,29 @@ public class RegisterActivity extends BaseActivity {
                 if (charSequence.length() > 0) {
                     clearRecommend.setVisibility(View.VISIBLE);
                 } else {
-                    clearRecommend.setVisibility(View.INVISIBLE);
+                    clearRecommend.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+        businessNumber.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int start, int count,
+                                          int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int start, int before, int count) {
+                if (charSequence.length() > 0) {
+                    clearBusiness.setVisibility(View.VISIBLE);
+                } else {
+                    clearBusiness.setVisibility(View.GONE);
                 }
             }
 
@@ -391,7 +417,7 @@ public class RegisterActivity extends BaseActivity {
     }
 
     @OnClick({R.id.back, R.id.clear_shop_name, R.id.clear_name, R.id.clear_phone, R.id.clear_code, R.id.request_code, R.id.clear_recommend, R.id.licence_rl, R.id.food_rl, R.id.shop_rl, R.id.submit
-            , R.id.addr_ll, R.id.city_ll, R.id.protocol,R.id.gree_iv})
+            , R.id.addr_ll, R.id.city_ll, R.id.protocol,R.id.gree_iv,R.id.clear_business})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.back:
@@ -479,6 +505,14 @@ public class RegisterActivity extends BaseActivity {
                     MainToast.showShortToast("请输入验证码");
                     return;
                 }
+                if (TextUtils.isEmpty(businessNumber.getText())) {
+                    MainToast.showShortToast("请输入统一社会信用代码");
+                    return;
+                }
+                if(!StringUtil.isBusiness(businessNumber.getText().toString())){
+                    MainToast.showShortToast("统一社会信用代码不符合规则");
+                    return;
+                }
                 if (TextUtils.isEmpty(province_id)) {
                     MainToast.showShortToast("请选择城市");
                     return;
@@ -519,6 +553,9 @@ public class RegisterActivity extends BaseActivity {
                     greeIv.setImageResource(R.mipmap.ungree_logo);
                 }
                 break;
+            case R.id.clear_business:
+                businessNumber.setText("");
+                break;
         }
     }
 
@@ -532,7 +569,7 @@ public class RegisterActivity extends BaseActivity {
         UserApi.loginregister(this, shopNameEt.getText().toString().trim(), nameEt.getText().toString().trim(), phoneEt.getText().toString().trim(), codeEt.getText().toString().trim(),
                 recommendEt.getText().toString().trim(), point.getLongitude() + "", point.getLatitude() + "", shopImgs.get(0).getUrl(),
                 licenceImgs.get(0).getUrl(), foodImgs.get(0).getUrl(), addrTv.getText().toString(),
-                province_id, city_id, area_id,
+                province_id, city_id, area_id,businessNumber.getText().toString(),
                 new RequestCallback() {
                     @Override
                     public void success(Object success) {

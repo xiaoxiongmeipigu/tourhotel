@@ -130,7 +130,8 @@ public class UserApi extends BasicApi{
      * @param exceptionCallback
      */
     public static void loginregister(Activity activity,String merchant_name,String name,String mobile,String sms_code,String parent_code,String longitude,String latitude,String cover_pic,
-                                     String business,String food,String address,String province_id,String city_id,String area_id,final RequestCallback callback, final RequestExceptionCallback exceptionCallback){
+                                     String business,String food,String address,String province_id,String city_id,String area_id,
+                                     String business_number,final RequestCallback callback, final RequestExceptionCallback exceptionCallback){
         Map<String,String> params = new HashMap<>();
         params.put("merchant_name",merchant_name);
         params.put("name",name);
@@ -147,6 +148,8 @@ public class UserApi extends BasicApi{
         params.put("province_id",province_id);
         params.put("city_id",city_id);
         params.put("area_id",area_id);
+        if(!TextUtils.isEmpty(business_number))
+            params.put("business_number",business_number);
         MapiUtil.getInstance().call(activity,loginregister,params,new MapiUtil.MapiSuccessResponse(){
             @Override
             public void success(JSONObject json) {
@@ -229,5 +232,32 @@ public class UserApi extends BasicApi{
             }
         });
     }
+
+    /**
+     * 修改密码
+     * @param activity
+     * @param old_password
+     * @param new_password
+     * @param callback
+     * @param exceptionCallback
+     */
+    public static void managemodifypassword(Activity activity,String old_password,String new_password,final RequestCallback callback, final RequestExceptionCallback exceptionCallback){
+        Map<String,String> params = new HashMap<>();
+        params.put("old_password",old_password);
+        params.put("new_password",new_password);
+        MapiUtil.getInstance().call(activity,managemodifypassword,params,new MapiUtil.MapiSuccessResponse(){
+            @Override
+            public void success(JSONObject json) {
+                DebugLog.i("json="+json);
+                callback.success(json);
+            }
+        },new MapiUtil.MapiFailResponse(){
+            @Override
+            public void fail(Integer code, String failMessage) {
+                exceptionCallback.error(code,failMessage);
+            }
+        });
+    }
+
 
 }

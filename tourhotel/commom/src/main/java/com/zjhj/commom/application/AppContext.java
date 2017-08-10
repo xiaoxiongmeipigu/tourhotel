@@ -86,7 +86,6 @@ public class AppContext extends Application {
 
         // 通过代码注册你的AppKey和AppSecret
         MobSDK.init(this, "1ed8728bef7e0", "f4b010d5cdc08406aeca02a471179918");
-
         Fresco.initialize(this);
         x.Ext.init(this);
         x.Ext.setDebug(BuildConfig.DEBUG); // 是否输出debug日志

@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 
+import com.zjhj.commom.api.BasicApi;
 import com.zjhj.commom.api.UserApi;
 import com.zjhj.commom.result.MapiUserResult;
 import com.zjhj.commom.util.RequestCallback;
@@ -129,8 +130,15 @@ public class LoginActivity extends BaseActivity {
                 hideLoading();
                 MainToast.showShortToast("登录成功");
                 userSP.saveUserBean(success);
-                ControllerUtil.go2Main();
-                finish();
+
+                if(!TextUtils.isEmpty(success.getIs_contract_over())&&success.getIs_contract_over().equals("1")){
+                    String url = TextUtils.isEmpty(success.getContract_over_url())?"":success.getContract_over_url();
+                    ControllerUtil.go2WebView(url, "游助网酒店管理", "", "", "", false);
+                }else{
+                    ControllerUtil.go2Main();
+                    finish();
+                }
+
             }
         }, new RequestExceptionCallback() {
             @Override

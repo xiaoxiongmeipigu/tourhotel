@@ -514,7 +514,8 @@ public class MealEditActivity extends BaseActivity {
     public void startPhotoZoom(Uri uri) {
         Uri outUrl = Uri
                 .fromFile(FileUtil.createFile(this, "meal_image.jpg", FileUtil.TYPE_IMAGE));
-        Crop.of(uri, outUrl).asSquare().withMaxSize(600, 600).start(this);
+        Crop.of(uri, outUrl).withMaxSize(600, 600).start(this);
+//        Crop.of(uri, outUrl).asSquare().withMaxSize(600, 600).start(this);
     }
 
     @OnClick({R.id.back, R.id.tv_right, R.id.cover_ll, R.id.cover_pic,R.id.del,R.id.save})

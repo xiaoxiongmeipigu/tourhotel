@@ -9,6 +9,7 @@ public class BasicApi {
     public static String BASIC_IMAGE = "http://122.225.92.10:8081/uploadFiles/uploadImgs/";
     public static String SHARE_APP_URL = "http://122.225.92.10:8081/uploadFiles/uploadImgs/";
     public static String PROTOCOL_GUIDE_URL = "http://www.daoyouzhu.com/guide-protocol.html?type=merchant";
+    public static String SHARE_IMAGE_URL = "http://www.daoyouzhu.com/api/default/merchant-share-page?merchant_id=";
 
     public static String smsLoginUrl = "/passport/sms-login";
     public static String getverify = "/default/sms-code";
@@ -48,5 +49,6 @@ public class BasicApi {
     public static String managetimedel = "/manage/time-del";
     public static String managegetmanage = "/manage/get-hotel";
     public static String managebanner= "/manage/banner";
+    public static String managemodifypassword= "/manage/modify-password";
 
 }

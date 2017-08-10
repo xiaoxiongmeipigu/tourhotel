@@ -9,6 +9,7 @@ import com.zjhj.tourhotel.activity.ForgetPsdActivity;
 import com.zjhj.tourhotel.activity.LocationAddrActivity;
 import com.zjhj.tourhotel.activity.LoginActivity;
 import com.zjhj.tourhotel.activity.MainActivity;
+import com.zjhj.tourhotel.activity.ModifyPsdActivity;
 import com.zjhj.tourhotel.activity.RegisterActivity;
 import com.zjhj.tourhotel.activity.SetPsdActivity;
 import com.zjhj.tourhotel.activity.ShowBigPicActivity;
@@ -245,6 +246,15 @@ public class ControllerUtil {
      */
     public static void go2ShopTime() {
         Intent intent = new Intent(AppContext.getInstance(), ShopTimeActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        AppContext.getInstance().startActivity(intent);
+    }
+
+    /**
+     * 修改密码
+     */
+    public static void go2ModifyPsd() {
+        Intent intent = new Intent(AppContext.getInstance(), ModifyPsdActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         AppContext.getInstance().startActivity(intent);
     }

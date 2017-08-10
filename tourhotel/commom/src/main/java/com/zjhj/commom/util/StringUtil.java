@@ -246,4 +246,24 @@ public class StringUtil {
         return matcher.find();
     }
 
+    /**
+     * 检证统一社会信用代码
+     *
+     * @param str
+     * @return
+     */
+    public static boolean isBusiness(String str) {
+        if (str == null) {
+            return false;
+        }
+        str = str.trim();
+        if (str.length() < 1) {
+            return false;
+        }
+        //^([0-9ABCDEFGHJKLMNPQRTUWXY]{2})([0-9]{6})([0-9ABCDEFGHJKLMNPQRTUWXY]{9})([0-9Y])$
+        Pattern pattern = Pattern.compile("^[A-Za-z0-9]{18}$");
+        Matcher matcher = pattern.matcher(str);
+        return matcher.find();
+    }
+
 }

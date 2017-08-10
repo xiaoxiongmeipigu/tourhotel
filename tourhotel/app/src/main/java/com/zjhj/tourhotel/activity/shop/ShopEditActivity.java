@@ -60,6 +60,7 @@ import com.zjhj.tourhotel.widget.PhotoDialog;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import butterknife.Bind;
@@ -339,8 +340,14 @@ public class ShopEditActivity extends BaseActivity {
                 diningList.remove(position);
                 diningList.remove(position);
                 shopDiningAdapter.notifyDataSetChanged();
-                if (selDiningList.contains(foodResult))
-                    selDiningList.remove(foodResult);
+                Iterator<MapiResourceResult> iterator = selDiningList.iterator();
+                while (iterator.hasNext()){
+                    MapiResourceResult resourceResult = iterator.next();
+                    if(resourceResult.getName().equals(foodResult.getName())){
+                        iterator.remove();
+                        return;
+                    }
+                }
             }
         });
 
@@ -376,8 +383,16 @@ public class ShopEditActivity extends BaseActivity {
                 payList.remove(position);
                 payList.remove(position);
                 shopPayAdapter.notifyDataSetChanged();
-                if (selPayList.contains(foodResult))
-                    selPayList.remove(foodResult);
+                Iterator<MapiResourceResult> iterator = selPayList.iterator();
+                while (iterator.hasNext()){
+                    MapiResourceResult resourceResult = iterator.next();
+                    if(resourceResult.getName().equals(foodResult.getName())){
+                        iterator.remove();
+                        return;
+                    }
+                }
+                /*if (selPayList.contains(foodResult))
+                    selPayList.remove(foodResult);*/
             }
         });
 
@@ -885,7 +900,8 @@ public class ShopEditActivity extends BaseActivity {
     public void startPhotoZoom(Uri uri) {
         Uri outUrl = Uri
                 .fromFile(FileUtil.createFile(this, "shop_image.jpg", FileUtil.TYPE_IMAGE));
-        Crop.of(uri, outUrl).asSquare().withMaxSize(600, 600).start(this);
+        Crop.of(uri, outUrl).withMaxSize(600, 600).start(this);
+//        Crop.of(uri, outUrl).asSquare().withMaxSize(600, 600).start(this);
     }
 
     @OnClick({R.id.back, R.id.tv_right, R.id.cover_pic, R.id.restaurant_cat_ll, R.id.city_ll, R.id.addr_ll, R.id.end_ll, R.id.start_ll})

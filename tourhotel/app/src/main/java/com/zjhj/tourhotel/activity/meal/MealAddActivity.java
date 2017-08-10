@@ -450,7 +450,8 @@ public class MealAddActivity extends BaseActivity {
     public void startPhotoZoom(Uri uri) {
         Uri outUrl = Uri
                 .fromFile(FileUtil.createFile(this, "meal_image.jpg", FileUtil.TYPE_IMAGE));
-        Crop.of(uri, outUrl).asSquare().withMaxSize(600, 600).start(this);
+        Crop.of(uri, outUrl).withMaxSize(600, 600).start(this);
+//        Crop.of(uri, outUrl).asSquare().withMaxSize(600, 600).start(this);
     }
 
     private void commit(){
